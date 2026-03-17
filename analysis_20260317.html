@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观市场每日分析报告 — 2026年03月17日</title>
+<style>
+  :root {
+    --navy-900: #040d1a;
+    --navy-800: #071428;
+    --navy-700: #0a1e3a;
+    --navy-600: #0d2849;
+    --navy-500: #123361;
+    --navy-400: #1a4480;
+    --accent-gold: #c9a84c;
+    --accent-gold-light: #e8c96b;
+    --accent-cyan: #00d4ff;
+    --accent-cyan-dim: #0099bb;
+    --green-pos: #00e676;
+    --green-dim: #1b5e20;
+    --red-neg: #ff5252;
+    --red-dim: #7f0000;
+    --amber: #ffab40;
+    --amber-dim: #ff6f00;
+    --text-primary: #e8f0fe;
+    --text-secondary: #90a4ae;
+    --text-muted: #546e7a;
+    --border: rgba(100,150,220,0.15);
+    --card-bg: rgba(13,40,73,0.6);
+    --card-border: rgba(0,212,255,0.12);
+    --glass: rgba(10,30,58,0.75);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--navy-900);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrap { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 24px 60px; }
+
+  .report-header {
+    padding: 40px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .header-left .firm-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .header-left h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .header-left h1 span { color: var(--accent-cyan); }
+  .header-left .subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .header-right { text-align: right; }
+  .header-right .date-badge {
+    background: linear-gradient(135deg, var(--navy-500), var(--navy-400));
+    border: 1px solid var(--accent-cyan-dim);
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .header-right .date-badge strong { color: var(--accent-gold); font-size: 15px; }
+  .header-right .disclaimer { margin-top: 8px; font-size: 11px; color: var(--text-muted); }
+
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-badge {
+    background: linear-gradient(135deg, var(--navy-500), var(--accent-cyan-dim));
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .section-title { font-size: 20px; font-weight: 600; color: var(--text-primary); }
+  .subsection { margin-bottom: 32px; }
+  .subsection-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .subsection-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0.5;
+  }
+  .kpi-card:hover { border-color: rgba(0,212,255,0.3); }
+  .kpi-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .kpi-value { font-size: 26px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+  .kpi-change { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .kpi-change.pos { color: var(--green-pos); }
+  .kpi-change.neg { color: var(--red-neg); }
+  .kpi-change.neu { color: var(--text-muted); }
+  .kpi-desc { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+  .table-wrap {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: linear-gradient(90deg, var(--navy-600), var(--navy-500)); }
+  thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
+  tbody tr:hover { background: rgba(0,212,255,0.04); }
+  tbody tr:last-child { border-bottom: none; }
+  td { padding: 11px 16px; color: var(--text-primary); vertical-align: middle; }
+  td.indicator { font-weight: 600; color: #fff; }
+  td.val { font-weight: 700; font-variant-numeric: tabular-nums; }
+  td.pos { color: var(--green-pos); font-weight: 600; }
+  td.neg { color: var(--red-neg); font-weight: 600; }
+  td.neu { color: var(--text-secondary); }
+  td.amber { color: var(--amber); font-weight: 600; }
+  td.gold { color: var(--accent-gold); font-weight: 600; }
+  td.muted { color: var(--text-muted); font-size: 12px; }
+  td.warn { color: var(--red-neg); font-weight: 700; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+  .badge-green { background: rgba(0,230,118,0.15); color: var(--green-pos); border: 1px solid rgba(0,230,118,0.3); }
+  .badge-red { background: rgba(255,82,82,0.15); color: var(--red-neg); border: 1px solid rgba(255,82,82,0.3); }
+  .badge-amber { background: rgba(255,171,64,0.15); color: var(--amber); border: 1px solid rgba(255,171,64,0.3); }
+  .badge-cyan { background: rgba(0,212,255,0.1); color: var(--accent-cyan); border: 1px solid rgba(0,212,255,0.25); }
+  .badge-gold { background: rgba(201,168,76,0.15); color: var(--accent-gold); border: 1px solid rgba(201,168,76,0.3); }
+
+  .alert-box {
+    border-left: 3px solid;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .alert-warn { border-color: var(--amber); background: rgba(255,171,64,0.07); color: #ffd180; }
+  .alert-info { border-color: var(--accent-cyan); background: rgba(0,212,255,0.05); color: var(--text-secondary); }
+  .alert-danger { border-color: var(--red-neg); background: rgba(255,82,82,0.06); color: #ff8a80; }
+  .alert-success { border-color: var(--green-pos); background: rgba(0,230,118,0.06); color: #b9f6ca; }
+  .alert-box strong { font-weight: 700; }
+
+  .heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .hm-cell {
+    border-radius: 10px;
+    padding: 16px 14px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hm-cell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), transparent);
+    pointer-events: none;
+  }
+  .hm-asset { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 6px; opacity: 0.8; }
+  .hm-val { font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+  .hm-change { font-size: 11px; font-weight: 600; }
+  .hm-level { font-size: 10px; opacity: 0.7; margin-top: 4px; }
+  .hm-arrow { font-size: 16px; position: absolute; top: 10px; right: 12px; opacity: 0.6; }
+
+  .hm-extreme-high { background: linear-gradient(135deg, #4a0000, #7f0000); border: 1px solid rgba(255,82,82,0.4); color: #ff8a80; }
+  .hm-high         { background: linear-gradient(135deg, #7f3000, #bf360c); border: 1px solid rgba(255,152,0,0.35); color: #ffcc80; }
+  .hm-elevated     { background: linear-gradient(135deg, #3e2723, #5d4037); border: 1px solid rgba(255,171,64,0.3); color: #ffecb3; }
+  .hm-medium       { background: linear-gradient(135deg, #0d2137, #1a3a5c); border: 1px solid rgba(0,212,255,0.2); color: #b3e5fc; }
+  .hm-low          { background: linear-gradient(135deg, #0a3d0a, #1b5e20); border: 1px solid rgba(0,230,118,0.3); color: #b9f6ca; }
+  .hm-up-alert     { background: linear-gradient(135deg, #620000, #9e0000); border: 1px solid rgba(255,23,68,0.45); color: #ff6e6e; }
+
+  .rec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 28px; }
+  .rec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .rec-card.long::before  { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--green-pos), transparent); }
+  .rec-card.neutral::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--amber), transparent); }
+  .rec-card.short::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--red-neg), transparent); }
+  .rec-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .rec-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .rec-direction {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .rec-direction.long    { background: rgba(0,230,118,0.15); color: var(--green-pos); border: 1px solid rgba(0,230,118,0.3); }
+  .rec-direction.neutral { background: rgba(255,171,64,0.15); color: var(--amber); border: 1px solid rgba(255,171,64,0.3); }
+  .rec-direction.short   { background: rgba(255,82,82,0.15); color: var(--red-neg); border: 1px solid rgba(255,82,82,0.3); }
+  .rec-meta { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+  .rec-meta span { color: var(--accent-gold); font-weight: 600; }
+  .rec-logic { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+  .rec-levels { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .rec-level-item { flex: 1; min-width: 100px; background: rgba(255,255,255,0.04); border-radius: 6px; padding: 8px 10px; font-size: 11px; }
+  .rec-level-item .lvl-label { color: var(--text-muted); margin-bottom: 2px; }
+  .rec-level-item .lvl-val { font-weight: 700; color: #fff; }
+
+  .calendar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .cal-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .cal-date { min-width: 72px; text-align: center; background: var(--navy-500); border-radius: 6px; padding: 6px; }
+  .cal-date .d { font-size: 20px; font-weight: 700; color: var(--accent-gold); line-height: 1; }
+  .cal-date .m { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+  .cal-body .cal-event { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .cal-body .cal-impact { font-size: 11px; color: var(--text-secondary); }
+  .cal-item.key-event { border-color: rgba(255,82,82,0.3); }
+  .cal-item.key-event .cal-date { background: rgba(255,82,82,0.15); }
+  .cal-item.ongoing .cal-date { background: rgba(255,171,64,0.12); }
+  .cal-item.ongoing .cal-date .d { color: var(--amber); font-size: 13px; }
+
+  .conclusion-box {
+    background: linear-gradient(135deg, rgba(13,40,73,0.8), rgba(10,30,58,0.9));
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .conclusion-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 20px;
+    font-size: 120px;
+    color: rgba(0,212,255,0.06);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .conclusion-box p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; position: relative; z-index: 1; }
+  .conclusion-box p strong { color: var(--text-primary); }
+  .conclusion-box p em { color: var(--accent-gold); font-style: normal; }
+
+  .report-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 0;
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    line-height: 1.8;
+  }
+
+  .pct-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .pct-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .pct-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent-cyan-dim), var(--accent-cyan)); }
+  .pct-bar-fill.high { background: linear-gradient(90deg, #ff5722, #ff1744); }
+  .pct-bar-fill.med  { background: linear-gradient(90deg, var(--amber-dim), var(--amber)); }
+  .pct-bar-fill.low  { background: linear-gradient(90deg, #1b5e20, var(--green-pos)); }
+  .pct-text { font-size: 11px; color: var(--text-muted); min-width: 36px; text-align: right; }
+
+  .ratio-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 3px; }
+  .ratio-high { background: rgba(255,82,82,0.15); color: #ff8a80; }
+  .ratio-med  { background: rgba(255,171,64,0.15); color: #ffcc80; }
+  .ratio-low  { background: rgba(0,230,118,0.12); color: #b9f6ca; }
+
+  @media (max-width: 768px) {
+    .rec-grid { grid-template-columns: 1fr; }
+    .heatmap-grid { grid-template-columns: repeat(2, 1fr); }
+    .header-left h1 { font-size: 22px; }
+    .kpi-value { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <header class="report-header">
+    <div class="header-left">
+      <div class="firm-label">Global Macro Research &middot; Quantitative Strategy</div>
+      <h1>宏观市场<span>每日分析</span>报告</h1>
+      <div class="subtitle">信用与利率 &middot; 波动率曲面 &middot; 美元流动性 &middot; 跨资产策略</div>
+    </div>
+    <div class="header-right">
+      <div class="date-badge">
+        报告日期 <strong>2026 年 03 月 17 日</strong><br>
+        数据截止 2026-03-16 美东收盘<br>
+        生成时间 2026-03-17 CST
+      </div>
+      <div class="disclaimer">仅供机构内部参考，不构成投资建议</div>
+    </div>
+  </header>
+
+  <!-- SECTION A -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">A</span>
+      <span class="section-title">市场仪表盘 — 信用与利率</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">NA IG CDS</div>
+        <div class="kpi-value" style="color:var(--accent-gold)">59.6<span style="font-size:14px;font-weight:400;color:var(--text-muted)"> bps</span></div>
+        <div class="kpi-change neg">&#9660; -3.2% (-1.97 bps)</div>
+        <div class="kpi-desc">北美投资级信用利差</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">美债 10Y 收益率</div>
+        <div class="kpi-value" style="color:var(--accent-cyan)">4.22<span style="font-size:14px;font-weight:400;color:var(--text-muted)">%</span></div>
+        <div class="kpi-change neg">&#9660; -6.0 bps 单日</div>
+        <div class="kpi-desc">避险买盘 / 通胀预期降温</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">2s10s 利差</div>
+        <div class="kpi-value">+53.75<span style="font-size:14px;font-weight:400;color:var(--text-muted)"> bps</span></div>
+        <div class="kpi-change pos">&#9650; +2 bps 曲线陡峭化</div>
+        <div class="kpi-desc">正斜率维持，仍偏平</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">VIX 恐慌指数</div>
+        <div class="kpi-value">24.21</div>
+        <div class="kpi-change neu">&#9660; -0.08%&nbsp;&nbsp;<span style="color:var(--text-muted)">52W 23% 分位</span></div>
+        <div class="kpi-desc">权益波动率中性偏高</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Atlanta GDPNow</div>
+        <div class="kpi-value" style="color:var(--green-pos)">+2.7<span style="font-size:14px;font-weight:400;color:var(--text-muted)">%</span></div>
+        <div class="kpi-change pos">软着陆叙事支撑</div>
+        <div class="kpi-desc">当季实际增长预测</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">OVX 原油波动率</div>
+        <div class="kpi-value" style="color:var(--red-neg)">101.97</div>
+        <div class="kpi-change" style="color:var(--red-neg)">&#9650; +1.43% 逆势上行</div>
+        <div class="kpi-desc">52W ~75% 分位，极高位</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">VXHYG 高收益信用</div>
+        <div class="kpi-value" style="color:var(--green-pos)">9.07</div>
+        <div class="kpi-change neg">&#9660;&#9660; -27.56% 骤降</div>
+        <div class="kpi-desc">信用市场压力显著消退</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">BofA 全球压力指数</div>
+        <div class="kpi-value">0.32</div>
+        <div class="kpi-change neg">&#9660; -1.0 绝对值</div>
+        <div class="kpi-desc">全球流动性无明显压力</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">A1 — CDS 利差概览</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值 (bps)</th><th>日变化</th><th>绝对水平</th><th>含义</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">北美投资级 CDS (NA IG)</td>
+              <td class="val gold">59.6</td>
+              <td class="neg">&#9660; -3.2%（-1.97 bps）</td>
+              <td><span class="badge badge-green">低</span></td>
+              <td class="muted">信用条件边际改善</td>
+            </tr>
+            <tr>
+              <td class="indicator">欧洲金融机构 CDS (EU Fin)</td>
+              <td class="val gold">67.3</td>
+              <td class="neg">&#9660; -2.5%（-1.73 bps）</td>
+              <td><span class="badge badge-green">低偏中</span></td>
+              <td class="muted">欧洲银行风险溢价收窄</td>
+            </tr>
+            <tr>
+              <td class="indicator">新兴市场主权 CDS (EM Sov)</td>
+              <td class="val amber">151.0</td>
+              <td class="neg">&#9660; -1.8%（-2.77 bps）</td>
+              <td><span class="badge badge-amber">高</span></td>
+              <td class="muted">EM 风险偏好小幅修复，绝对水平仍高</td>
+            </tr>
+            <tr>
+              <td class="indicator">BofA 私人信用利差</td>
+              <td class="val gold">70.0</td>
+              <td class="neu">&#9660; -0.1%（-0.07 bps）</td>
+              <td><span class="badge badge-cyan">稳定</span></td>
+              <td class="muted">私人信用市场稳定，几乎无变化</td>
+            </tr>
+            <tr>
+              <td class="indicator">BofA 全球压力指数</td>
+              <td class="val" style="color:var(--green-pos)">0.32</td>
+              <td class="neg">&#9660; -1.0（绝对值）</td>
+              <td><span class="badge badge-green">低位</span></td>
+              <td class="muted">全球金融压力中性偏正</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-info">
+        <strong>解读：</strong> 全线 CDS 利差压缩，信用市场整体呈避险情绪回落态势。EM CDS（151 bps）vs IG（59.6 bps）利差约 <strong>91.4 bps</strong>，反映新兴市场相对发达市场存在明显风险溢价分化。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">A2 — 利率曲线</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>期限</th><th>绝对水平</th><th>日变化</th><th>信号</th><th>备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">美债 2Y（推算）</td>
+              <td class="val" style="color:var(--accent-cyan)">~3.68%</td>
+              <td class="neu">—</td>
+              <td><span class="badge badge-cyan">推算值</span></td>
+              <td class="muted">由 10Y 减 2s10s 倒推</td>
+            </tr>
+            <tr>
+              <td class="indicator">美债 10Y</td>
+              <td class="val" style="color:var(--accent-cyan)">4.22%</td>
+              <td class="neg">&#9660; -6.0 bps 单日下行</td>
+              <td><span class="badge badge-green">避险买盘</span></td>
+              <td class="muted">下行明显，通胀预期回落</td>
+            </tr>
+            <tr>
+              <td class="indicator">2s10s 利差</td>
+              <td class="val">+53.75 bps</td>
+              <td class="pos">&#9650; +2 bps</td>
+              <td><span class="badge badge-cyan">正斜率</span></td>
+              <td class="muted">曲线继续陡峭化，历史中性约 100–150 bps</td>
+            </tr>
+            <tr>
+              <td class="indicator">TIPS 1Y 实际利率</td>
+              <td class="val amber">4.72%</td>
+              <td class="pos">&#9650; +2.0 bps</td>
+              <td><span class="badge badge-red">限制性</span></td>
+              <td class="muted">短端实际利率高位，持续压制成长资产</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-warn">
+        <strong>矛盾信号：</strong> 10Y 名义利率下行 6 bps，但 TIPS 1Y 实际利率上行 2 bps，隐含 <strong>1Y 盈亏平衡通胀率下行约 8 bps</strong>。短端实际利率 4.72% 对成长资产估值形成压制，但长端名义利率下行提供对冲空间。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">A3 — 增长与通胀背景</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>当前值</th><th>日变化</th><th>状态</th><th>解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">Atlanta 联储 GDPNow</td>
+              <td class="val" style="color:var(--green-pos)">+2.7%</td>
+              <td class="neu">N/A</td>
+              <td><span class="badge badge-green">健康</span></td>
+              <td class="muted">当前季度实际增长预测健康</td>
+            </tr>
+            <tr>
+              <td class="indicator">衰退概率（12 个月）</td>
+              <td class="val amber">24.6%</td>
+              <td class="neu">N/A</td>
+              <td><span class="badge badge-amber">尾部风险</span></td>
+              <td class="muted">非零但非基准情形，需持续监测</td>
+            </tr>
+            <tr>
+              <td class="indicator">Citi 美国经济意外指数</td>
+              <td class="val" style="color:var(--green-pos)">+28.5</td>
+              <td class="pos">&#9650; +1.3</td>
+              <td><span class="badge badge-green">超预期</span></td>
+              <td class="muted">数据持续超预期，支撑软着陆叙事</td>
+            </tr>
+            <tr>
+              <td class="indicator">Citi 欧元区经济意外指数</td>
+              <td class="val">+6.6</td>
+              <td class="neu">N/A</td>
+              <td><span class="badge badge-cyan">勉强超预期</span></td>
+              <td class="muted">欧元区弱复苏，动能不足</td>
+            </tr>
+            <tr>
+              <td class="indicator">标普 500 远期市盈率</td>
+              <td class="val amber">20.5x</td>
+              <td class="neg">&#9660; -0.1x</td>
+              <td><span class="badge badge-amber">偏高</span></td>
+              <td class="muted">估值偏高，实际利率高位构成压制</td>
+            </tr>
+            <tr>
+              <td class="indicator">美国金融条件指数 (FCI)</td>
+              <td class="val" style="color:var(--green-pos)">+0.13</td>
+              <td class="neg">&#9660; -2.0（宽松方向）</td>
+              <td><span class="badge badge-green">温和宽松</span></td>
+              <td class="muted">金融条件小幅宽松，利好风险资产</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION B -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">B</span>
+      <span class="section-title">波动率分析</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B1 — 权益类波动率（美股）</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值</th><th>日变化</th><th>52W 高</th><th>52W 低</th><th>52W 分位</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">VIX（标普 500）</td>
+              <td class="val amber">24.21</td>
+              <td class="neu">&#9660; -0.08%</td>
+              <td class="muted">60.13</td>
+              <td class="muted">13.38</td>
+              <td>
+                <div class="pct-bar-wrap">
+                  <div class="pct-bar"><div class="pct-bar-fill low" style="width:23%"></div></div>
+                  <span class="pct-text">23%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="indicator">VXN（纳斯达克 100）</td>
+              <td class="val amber">26.32</td>
+              <td class="neg">&#9660;&#9660; -4.95%</td>
+              <td class="muted">52.17</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+            </tr>
+            <tr>
+              <td class="indicator">VXD（道琼斯）</td>
+              <td class="val">22.51</td>
+              <td class="warn">&#9660; -30.95% &#9888;</td>
+              <td class="muted">34.44</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+            </tr>
+            <tr>
+              <td class="indicator">VVIX（VIX 的波动率）</td>
+              <td class="val" style="color:var(--red-neg)">116.78</td>
+              <td class="neg">&#9660; -4.75%</td>
+              <td class="muted">189.03</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-danger">
+        <strong>&#9888; VXD 异常警示：</strong> 道琼斯波动率指数单日骤降 -30.95%，幅度极为罕见，可能反映前期异常期权定价回归正常或数据延迟修正，<strong>需独立核实后使用</strong>。
+      </div>
+      <div class="alert-box alert-warn">
+        <strong>VVIX/VIX = 4.82（历史均值 4.0–4.5）：</strong> VVIX 高企表明机构正在<strong>对冲尾部风险</strong>，而非恐慌性抛售。VIX 处于 52 周低位 23% 分位与 VVIX 高企形成背离——"表面平静、暗流涌动"的典型形态，机构悄然布局保护性头寸。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B2 — 国际市场波动率</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值</th><th>日变化</th><th>vs VIX (24.21) 比值</th><th>风险信号</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">VXEEM（新兴市场 ETF）</td>
+              <td class="val amber">29.97</td>
+              <td class="neg">&#9660; -6.87%</td>
+              <td><span class="ratio-badge ratio-med">1.24&times;</span></td>
+              <td><span class="badge badge-amber">美元溢价</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXFXI（中国 ETF）</td>
+              <td class="val amber">30.27</td>
+              <td class="neg">&#9660; -3.48%</td>
+              <td><span class="ratio-badge ratio-med">1.25&times;</span></td>
+              <td><span class="badge badge-amber">与 EM 持平</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXEFA（发达市场 EAFE）</td>
+              <td class="val">27.06</td>
+              <td class="neg">&#9660; -2.56%</td>
+              <td><span class="ratio-badge ratio-med">1.12&times;</span></td>
+              <td><span class="badge badge-amber">超 52W 高</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXEWZ（巴西 ETF）</td>
+              <td class="val" style="color:var(--red-neg)">40.41</td>
+              <td class="pos">&#9650; +2.49% 逆势</td>
+              <td><span class="ratio-badge ratio-high">1.67&times;</span></td>
+              <td><span class="badge badge-red">&#9889; 异常信号</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-danger">
+        <strong>巴西异常：</strong> VXEWZ = 40.41 逆势上升 +2.49%，已超 52 周高位 33.51。在国际板块普遍回落背景下唯一逆势，需关注<strong>巴西财政赤字或政治事件</strong>，评估 EM 情绪传染风险。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B3 — 大宗商品波动率</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值</th><th>日变化</th><th>52W 高</th><th>52W 分位</th><th>信号</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">OVX（原油波动率）</td>
+              <td class="val" style="color:var(--red-neg)">101.97</td>
+              <td class="pos">&#9650; +1.43% 逆势上行</td>
+              <td class="muted">125.99</td>
+              <td>
+                <div class="pct-bar-wrap">
+                  <div class="pct-bar"><div class="pct-bar-fill high" style="width:75%"></div></div>
+                  <span class="pct-text">~75%</span>
+                </div>
+              </td>
+              <td><span class="badge badge-red">极高位</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">GVZ（黄金波动率）</td>
+              <td class="val amber">30.56</td>
+              <td class="neg">&#9660;&#9660; -8.83% 大幅回落</td>
+              <td class="muted">48.68</td>
+              <td>
+                <div class="pct-bar-wrap">
+                  <div class="pct-bar"><div class="pct-bar-fill med" style="width:43%"></div></div>
+                  <span class="pct-text">~43%</span>
+                </div>
+              </td>
+              <td><span class="badge badge-cyan">中位</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXSLV（白银波动率）</td>
+              <td class="val">69.11</td>
+              <td class="neg">&#9660; -4.74%</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+              <td><span class="badge badge-amber">高</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXGDX（黄金矿商 ETF）</td>
+              <td class="val amber">52.56</td>
+              <td class="neg">&#9660; -1.65%</td>
+              <td class="muted">—</td>
+              <td class="muted">—</td>
+              <td><span class="badge badge-amber">高（经营杠杆）</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-warn">
+        <strong>OVX vs GVZ 分化信号：</strong> OVX（+1.43%）&#9650; vs GVZ（-8.83%）&#9660; 大幅背离。宏观含义：<strong>能源供给侧风险尚未消退，黄金市场短期不确定性已部分出清</strong>。若 OVX 继续上行而 VIX 维持低位，滞胀交易逻辑将进一步强化。GVZ/VIX = <strong>1.26</strong>（&gt;1.0），黄金作为股市对冲工具效率下降。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B4 — 固定收益与信用波动率</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值</th><th>日变化</th><th>vs VIX 比值</th><th>解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">TYVIX（10Y 国债波动率）</td>
+              <td class="val" style="color:var(--green-pos)">4.71</td>
+              <td class="neu">&#8594; +0.00%</td>
+              <td><span class="ratio-badge ratio-low">0.19&times;</span></td>
+              <td class="muted">利率市场波动率极度稳定，无系统性压力</td>
+            </tr>
+            <tr>
+              <td class="indicator">VXTLT（20Y+ 长债 ETF）</td>
+              <td class="val">14.45</td>
+              <td class="neg">&#9660;&#9660; -12.79% 骤降</td>
+              <td><span class="ratio-badge ratio-low">0.60&times;</span></td>
+              <td class="muted">长端利率不确定性骤降，债市情绪稳定</td>
+            </tr>
+            <tr>
+              <td class="indicator">VXHYG（高收益债 ETF）</td>
+              <td class="val" style="color:var(--green-pos)">9.07</td>
+              <td class="neg">&#9660;&#9660;&#9660; -27.56% 骤降</td>
+              <td><span class="ratio-badge ratio-low">0.37&times;</span></td>
+              <td class="muted">信用市场压力显著消退，今日跨资产最强修复信号</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-success">
+        <strong>结论：</strong> 固定收益波动率骤降是今日跨资产修复的核心驱动。VXHYG/VIX = 0.37（正常区间 0.30–0.60），<strong>信用市场暂不向股市传导压力</strong>。债市先于股市稳定，符合典型的<strong>"信用主导反弹"</strong>路径。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B5 — 个股波动率（科技板块）</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>指标</th><th>最新值</th><th>日变化</th><th>vs VXN (26.32) 偏差</th><th>vs VIX (24.21) 偏差</th><th>风险评估</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">VXAPL（苹果）</td>
+              <td class="val amber">30.07</td>
+              <td class="neg">&#9660; -8.85%</td>
+              <td class="amber">+3.75（+14.2%）</td>
+              <td class="amber">+5.86（+24.2%）</td>
+              <td><span class="badge badge-amber">公司溢价</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXGOG（谷歌）</td>
+              <td class="val amber">32.57</td>
+              <td class="neg">&#9660; -4.82%</td>
+              <td class="amber">+6.25（+23.7%）</td>
+              <td class="amber">+8.36（+34.5%）</td>
+              <td><span class="badge badge-amber">公司溢价</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXAZN（亚马逊）</td>
+              <td class="val" style="color:var(--red-neg)">35.58</td>
+              <td class="neg">&#9660; -6.76%</td>
+              <td style="color:var(--red-neg)">+9.26（+35.2%）</td>
+              <td style="color:var(--red-neg)">+11.37（+47.0%）</td>
+              <td><span class="badge badge-red">高溢价</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXGS（高盛）</td>
+              <td class="val" style="color:var(--red-neg)">43.98</td>
+              <td class="neg">&#9660; -0.74% 粘性高</td>
+              <td style="color:var(--red-neg)">+17.66（+67.1%）</td>
+              <td style="color:var(--red-neg)">+19.77（+81.7%）</td>
+              <td><span class="badge badge-red">监管/利率敏感</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">VXIBM（IBM）</td>
+              <td class="val" style="color:var(--red-neg)">39.02</td>
+              <td class="neg">&#9660; -2.45%</td>
+              <td style="color:var(--red-neg)">+12.70（+48.3%）</td>
+              <td style="color:var(--red-neg)">+14.81（+61.2%）</td>
+              <td><span class="badge badge-red">高溢价</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">B6 — 波动率热力图（跨资产）</div>
+      <div class="heatmap-grid">
+        <div class="hm-cell hm-medium">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">美股 VIX</div>
+          <div class="hm-val">24.21</div>
+          <div class="hm-change">&#9660; -0.08%</div>
+          <div class="hm-level">52W 低位 23%</div>
+        </div>
+        <div class="hm-cell hm-elevated">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">纳斯达克 VXN</div>
+          <div class="hm-val">26.32</div>
+          <div class="hm-change">&#9660;&#9660; -4.95%</div>
+          <div class="hm-level">中偏高</div>
+        </div>
+        <div class="hm-cell hm-elevated">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">新兴市场 VXEEM</div>
+          <div class="hm-val">29.97</div>
+          <div class="hm-change">&#9660; -6.87%</div>
+          <div class="hm-level">溢价 1.24&times;</div>
+        </div>
+        <div class="hm-cell hm-elevated">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">中国 VXFXI</div>
+          <div class="hm-val">30.27</div>
+          <div class="hm-change">&#9660; -3.48%</div>
+          <div class="hm-level">与 EM 持平</div>
+        </div>
+        <div class="hm-cell hm-elevated">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">发达市场 VXEFA</div>
+          <div class="hm-val">27.06</div>
+          <div class="hm-change">&#9660; -2.56%</div>
+          <div class="hm-level">超 52W 高位</div>
+        </div>
+        <div class="hm-cell hm-up-alert">
+          <div class="hm-arrow">&#9650;</div>
+          <div class="hm-asset">巴西 VXEWZ</div>
+          <div class="hm-val">40.41</div>
+          <div class="hm-change">&#9650; +2.49% &#9889;</div>
+          <div class="hm-level">超 52W 高位</div>
+        </div>
+        <div class="hm-cell hm-extreme-high">
+          <div class="hm-arrow">&#9650;</div>
+          <div class="hm-asset">原油 OVX</div>
+          <div class="hm-val">101.97</div>
+          <div class="hm-change">&#9650; +1.43% 逆势</div>
+          <div class="hm-level">~75% 分位 极高</div>
+        </div>
+        <div class="hm-cell hm-medium">
+          <div class="hm-arrow">&#9660;&#9660;</div>
+          <div class="hm-asset">黄金 GVZ</div>
+          <div class="hm-val">30.56</div>
+          <div class="hm-change">&#9660;&#9660; -8.83%</div>
+          <div class="hm-level">~43% 中位</div>
+        </div>
+        <div class="hm-cell hm-high">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">白银 VXSLV</div>
+          <div class="hm-val">69.11</div>
+          <div class="hm-change">&#9660; -4.74%</div>
+          <div class="hm-level">高位</div>
+        </div>
+        <div class="hm-cell hm-high">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">黄金矿商 VXGDX</div>
+          <div class="hm-val">52.56</div>
+          <div class="hm-change">&#9660; -1.65%</div>
+          <div class="hm-level">经营杠杆溢价</div>
+        </div>
+        <div class="hm-cell hm-low">
+          <div class="hm-arrow">&#8594;</div>
+          <div class="hm-asset">国债 TYVIX</div>
+          <div class="hm-val">4.71</div>
+          <div class="hm-change">&#8594; 0.00%</div>
+          <div class="hm-level">极低稳定</div>
+        </div>
+        <div class="hm-cell hm-low">
+          <div class="hm-arrow">&#9660;&#9660;&#9660;</div>
+          <div class="hm-asset">高收益 VXHYG</div>
+          <div class="hm-val">9.07</div>
+          <div class="hm-change">&#9660;&#9660;&#9660; -27.56%</div>
+          <div class="hm-level">低位 信用修复</div>
+        </div>
+        <div class="hm-cell hm-elevated">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">苹果 VXAPL</div>
+          <div class="hm-val">30.07</div>
+          <div class="hm-change">&#9660; -8.85%</div>
+          <div class="hm-level">vs VXN +14.2%</div>
+        </div>
+        <div class="hm-cell hm-high">
+          <div class="hm-arrow">&#9660;</div>
+          <div class="hm-asset">亚马逊 VXAZN</div>
+          <div class="hm-val">35.58</div>
+          <div class="hm-change">&#9660; -6.76%</div>
+          <div class="hm-level">vs VXN +35.2%</div>
+        </div>
+        <div class="hm-cell hm-extreme-high">
+          <div class="hm-arrow">&#8594;</div>
+          <div class="hm-asset">高盛 VXGS</div>
+          <div class="hm-val">43.98</div>
+          <div class="hm-change">&#9660; -0.74% 粘性</div>
+          <div class="hm-level">vs VIX +81.7%</div>
+        </div>
+      </div>
+      <div class="alert-box alert-info">
+        <strong>宏观分化：</strong> "股债信用同步降温 + 能源波动率逆势维持高位" = 当前处于<strong>局部性滞胀担忧与短期风险偏好修复相互拉锯</strong>的阶段。<br>
+        &bull; 权益 + 信用波动率下降：系统性危机风险暂时降低；<br>
+        &bull; OVX 逆势上升至 102：能源供给侧风险未消退，地缘政治溢价持续定价；<br>
+        &bull; VVIX/VIX = 4.82（偏高）：机构悄悄布局保护性头寸，表面平静下防御性需求存在；<br>
+        &bull; VXHYG 骤降至 9.07：信用周期<strong>尚未逆转</strong>，债市领先修复。
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION C -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">C</span>
+      <span class="section-title">美元融资与外汇信号</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">C1 — 美元流动性综合判断</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>推断指标</th><th>数值</th><th>日变化</th><th>信号方向</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator">美国金融条件指数（US FCI）</td>
+              <td class="val" style="color:var(--green-pos)">+0.13</td>
+              <td class="neg">&#9660; -2.0（宽松方向）</td>
+              <td><span class="badge badge-green">温和宽松</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">BofA 全球压力指数</td>
+              <td class="val" style="color:var(--green-pos)">0.32</td>
+              <td class="neg">&#9660; -1.0</td>
+              <td><span class="badge badge-green">无明显压力</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">NA IG CDS</td>
+              <td class="val gold">59.6 bps</td>
+              <td class="neg">&#9660; -3.2%</td>
+              <td><span class="badge badge-green">融资成本下行</span></td>
+            </tr>
+            <tr>
+              <td class="indicator">EM CDS（绝对水平）</td>
+              <td class="val amber">151.0 bps</td>
+              <td class="neg">&#9660; -1.8%</td>
+              <td><span class="badge badge-amber">外围压力未消</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-info">
+        <strong>综合判断：</strong> 美元融资市场当前无系统性压力信号，FCI 偏宽松，美元流动性条件支持风险资产续涨，但 <strong>EM CDS 151 bps 的高绝对水平意味着外围压力未根本消除</strong>。
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">C2 — 人民币及新兴市场外汇信号</div>
+      <div class="alert-box alert-info">
+        &bull; <strong>EM CDS 151.0 bps</strong>：绝对水平偏高，新兴市场整体偿债压力背景未变；<br>
+        &bull; <strong>VXEEM/VIX = 1.24</strong>：新兴市场波动率溢价持续，反映美元结构性强势的持续传导；<br>
+        &bull; <strong>VXFXI = 30.27</strong>（-3.48%，今日改善）：中国未发生特殊事件驱动的额外分化；<br>
+        &bull; <strong>USD/CNH 展望：</strong>短期围绕 7.2 关口震荡；若美联储鸽派信号出现，7.0 方向窗口打开；若 OVX 高位伴随美元走强，则 7.3 关口防守压力上升。
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION D -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">D</span>
+      <span class="section-title">综合结论与操作建议</span>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">D1 — 核心矛盾总结</div>
+      <div class="conclusion-box">
+        <p>
+          当前市场核心矛盾在于：<strong>宏观数据韧性（GDPNow +2.7%，Citi 意外指数 +28.5）支撑软着陆叙事</strong>，而<strong>实际利率高位（TIPS 1Y 4.72%）</strong>与<strong>能源波动率极端水平（OVX 101.97）</strong>共同构成滞胀隐忧。今日风险资产的修复（信用利差全面收窄、VXHYG -27.56%、VIX 持平）是<em>情绪主导的短期喘息</em>，机构通过高企的 VVIX/VIX 比值（4.82）悄然对冲尾部风险，显示此次反弹的可持续性存疑。在美联储维持限制性政策框架下，<em>"逢低做多"策略的风险回报比正在边际下降</em>。
+        </p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">D2 — 具体操作建议</div>
+      <div class="rec-grid">
+        <div class="rec-card long">
+          <div class="rec-number">建议一</div>
+          <div class="rec-title">做多美国长端国债</div>
+          <div class="rec-direction long">&#9650; 做多</div>
+          <div class="rec-meta">
+            <span>工具：</span> TLT（20Y+ 美债 ETF）或国债期货 ZB 合约
+          </div>
+          <div class="rec-logic">
+            10Y 收益率单日下行 6 bps，VXTLT -12.79% 显示债市情绪急速稳定；衰退概率 24.6% 非零，若后续数据走弱，长端利率将系统性下行；2s10s = 53.75 bps 较历史中性偏平，曲线有进一步陡峭化空间。
+          </div>
+          <div class="rec-levels">
+            <div class="rec-level-item">
+              <div class="lvl-label">建仓触发</div>
+              <div class="lvl-val" style="color:var(--green-pos)">4.30%–4.35%</div>
+            </div>
+            <div class="rec-level-item">
+              <div class="lvl-label">止损位</div>
+              <div class="lvl-val" style="color:var(--red-neg)">10Y &gt; 4.45%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rec-card neutral">
+          <div class="rec-number">建议二</div>
+          <div class="rec-title">对冲原油波动率（中性跨式）</div>
+          <div class="rec-direction neutral">&#8900; 中性对冲</div>
+          <div class="rec-meta">
+            <span>工具：</span> WTI 原油 ATM 跨式期权（Straddle）或 USO 宽跨式（Strangle）
+          </div>
+          <div class="rec-logic">
+            OVX = 101.97（52W 约 75% 分位），在权益波动率普遍回落背景下逆势上升 +1.43%，地缘政治溢价仍在，能源市场存在方向性跳升风险但方向不明，跨式结构获益于任意方向的大幅波动。
+          </div>
+          <div class="rec-levels">
+            <div class="rec-level-item">
+              <div class="lvl-label">加仓触发</div>
+              <div class="lvl-val" style="color:var(--amber)">OVX &gt; 110</div>
+            </div>
+            <div class="rec-level-item">
+              <div class="lvl-label">止损</div>
+              <div class="lvl-val" style="color:var(--red-neg)">OVX &lt; 85</div>
+            </div>
+            <div class="rec-level-item">
+              <div class="lvl-label">Theta 止损</div>
+              <div class="lvl-val" style="color:var(--red-neg)">&gt;15% 净权利金</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rec-card short">
+          <div class="rec-number">建议三</div>
+          <div class="rec-title">科技板块相对减配（QQQ vs SPY）</div>
+          <div class="rec-direction short">&#9660; 做空相对价值</div>
+          <div class="rec-meta">
+            <span>工具：</span> 多头 SPY + 空头 QQQ；或对持仓卖出备兑看涨期权（Covered Call）
+          </div>
+          <div class="rec-logic">
+            VXAZN（35.58）/ VXGOG（32.57）/ VXAPL（30.07）全部超出 VXN 14%–35%，个股风险溢价持续存在；SPX 远期 PE 20.5x 在 TIPS 1Y 4.72% 压制下缺乏估值扩张空间；科技板块今日反弹（VXN -4.95%）可能是超卖修复而非趋势逆转。
+          </div>
+          <div class="rec-levels">
+            <div class="rec-level-item">
+              <div class="lvl-label">加空触发</div>
+              <div class="lvl-val" style="color:var(--amber)">VXN 反弹 &gt; 30</div>
+            </div>
+            <div class="rec-level-item">
+              <div class="lvl-label">止损</div>
+              <div class="lvl-val" style="color:var(--red-neg)">QQQ/SPY 20D 高点</div>
+            </div>
+            <div class="rec-level-item">
+              <div class="lvl-label">平仓条件</div>
+              <div class="lvl-val" style="color:var(--green-pos)">VIX &lt; 20</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">D3 — 主要风险事项与事件日历</div>
+      <div class="calendar-grid">
+        <div class="cal-item">
+          <div class="cal-date">
+            <div class="d">18</div>
+            <div class="m">MAR 周三</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">美联储官员讲话（多位）</div>
+            <div class="cal-impact">利率路径指引，影响 2s10s 形态及 TLT 头寸</div>
+          </div>
+        </div>
+        <div class="cal-item">
+          <div class="cal-date">
+            <div class="d">19</div>
+            <div class="m">MAR 周四</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">美国初申失业救济金</div>
+            <div class="cal-impact">劳动力市场韧性验证，偏强则压制长端利率</div>
+          </div>
+        </div>
+        <div class="cal-item key-event">
+          <div class="cal-date">
+            <div class="d">20</div>
+            <div class="m">MAR 周五</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">核心 PCE 通胀数据（月度）</div>
+            <div class="cal-impact" style="color:#ff8a80">&#9889; 关键触发点，超预期将重新定价实际利率</div>
+          </div>
+        </div>
+        <div class="cal-item">
+          <div class="cal-date">
+            <div class="d">21</div>
+            <div class="m">MAR 周五</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">密歇根消费者信心终值</div>
+            <div class="cal-impact">通胀预期子指标关注度高</div>
+          </div>
+        </div>
+        <div class="cal-item ongoing">
+          <div class="cal-date">
+            <div class="d">持续</div>
+            <div class="m">关注</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">中东地缘政治事件</div>
+            <div class="cal-impact">OVX 高位背景下可能触发原油跳升，跨式头寸受益</div>
+          </div>
+        </div>
+        <div class="cal-item ongoing">
+          <div class="cal-date">
+            <div class="d">持续</div>
+            <div class="m">关注</div>
+          </div>
+          <div class="cal-body">
+            <div class="cal-event">巴西 VXEWZ 逆势上升原因</div>
+            <div class="cal-impact">关注巴西财政/政治事件，评估 EM 情绪传染风险</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="report-footer">
+    <div>
+      数据截止：2026-03-16 收盘（美国东部时间）&nbsp;|&nbsp;
+      报告生成：2026-03-17 CST&nbsp;|&nbsp;
+      数据来源：market_data/gauge_history.json（hedgefundmgr.blogspot.com 2026-03-16）
+    </div>
+    <div style="color:var(--red-neg);opacity:0.6">
+      免责声明：本报告为量化分析模型生成，仅供机构内部参考，不构成投资建议。
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
